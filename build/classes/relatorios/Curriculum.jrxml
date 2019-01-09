@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29b55d2d-423d-426f-a89b-ce1e52374c8a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="foto" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="nacionalidade" class="java.lang.String"/>
+	<field name="estadoCivil" class="java.lang.String"/>
+	<field name="dnasc" class="java.lang.Object"/>
+	<field name="rua" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="bairro" class="java.lang.String"/>
+	<field name="cidade" class="java.lang.String"/>
+	<field name="uf" class="java.lang.String"/>
+	<field name="cep" class="java.lang.String"/>
+	<field name="tel1" class="java.lang.String"/>
+	<field name="tel2" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="habilidade" class="java.lang.String"/>
+	<field name="objetivo" class="java.lang.String"/>
+	<field name="formacao" class="java.lang.String"/>
+	<field name="experiencia" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="56" uuid="ad56c1db-6a28-4310-b840-b118c13e3d6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURRICULUM VITAE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="642" splitType="Stretch">
+			<image>
+				<reportElement x="373" y="16" width="166" height="166" uuid="1bc5f6a3-3a2b-4315-85d9-9a34204ea253"/>
+				<imageExpression><![CDATA[$F{foto}.isEmpty()?null:$F{foto}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="16" y="16" width="344" height="20" uuid="46d95531-16aa-453e-ac9c-7de19b7d0d92"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="16" y="48" width="344" height="134" uuid="04f844e1-87ae-45a4-8721-914320def75b"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nacionalidade}+", "+ $F{estadoCivil}+", "+$F{dnasc} + "\n" + $F{rua} +", "+$F{numero}+", "+$F{bairro}+"\n"+ $F{cidade} + "-" + $F{uf} + " - " + $F{cep} +"\n"+ "Telefone:" + $F{tel1} + ($F{tel2}.replaceAll("[()-]", "").trim().isEmpty()?"":" / "+$F{tel2})+"\n"+($F{email}.isEmpty()?"\n":"E-Mail: " + $F{email})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="217" width="555" height="1" uuid="2ddc15e7-7a7c-4717-9174-2e4a1ddd2b67"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="197" width="100" height="20" uuid="d94342c2-83f0-47c6-a1aa-5effb2308ef2"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBJETIVO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="232" width="523" height="53" uuid="eed8815b-877a-4a1c-93f3-2aafb7d8ffe4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{objetivo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="316" width="555" height="1" uuid="465366e9-601c-40f0-ab58-a76ffda50b22"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="296" width="242" height="20" uuid="a6eae40a-9fe9-448a-86d3-c848dfeeb52a"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HABILIDADES & COMPETÊNCIAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="331" width="523" height="43" uuid="46798574-d219-4bd8-8ea2-c44d9159828c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{habilidade}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="406" width="555" height="1" uuid="4c9c038a-5abd-48e5-ae0a-faf8f2835eab"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="386" width="100" height="20" uuid="9c9c846f-4504-41fd-8cf2-d01fde1d5205"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMAÇÃO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="421" width="523" height="78" uuid="cd40bb53-0e78-48ef-8f42-4204eae67777"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="518" width="242" height="20" uuid="7d2e5d37-2adb-46f7-b073-73797720720a"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXPERIÊNCIA PROFISSIONAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="538" width="555" height="1" uuid="7b39ff04-6ef8-484e-bee2-55ef6be4e92a"/>
+			</line>
+			<textField>
+				<reportElement x="16" y="553" width="523" height="78" uuid="5817b2f6-0002-43df-a112-1af45ae3f83b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{experiencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="50"/>
+	</summary>
+</jasperReport>

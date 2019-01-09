@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/02/2018 11:14:45 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.Pessoa" table="pessoa" catalog="bdcurrculum" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="foto" type="string">
+            <column name="foto" />
+        </property>
+        <property name="nome" type="string">
+            <column name="nome" length="100" not-null="true" />
+        </property>
+        <property name="nacionalidade" type="string">
+            <column name="nacionalidade" length="45" not-null="true" />
+        </property>
+        <property name="estadoCivil" type="string">
+            <column name="estadoCivil" length="45" not-null="true" />
+        </property>
+        <property name="dnasc" type="date">
+            <column name="dNasc" length="10" not-null="true" />
+        </property>
+        <property name="rua" type="string">
+            <column name="rua" length="100" not-null="true" />
+        </property>
+        <property name="numero" type="string">
+            <column name="numero" length="10" />
+        </property>
+        <property name="bairro" type="string">
+            <column name="bairro" length="45" not-null="true" />
+        </property>
+        <property name="cidade" type="string">
+            <column name="cidade" length="45" not-null="true" />
+        </property>
+        <property name="uf" type="string">
+            <column name="uf" length="2" not-null="true" />
+        </property>
+        <property name="cep" type="string">
+            <column name="cep" length="10" not-null="true" />
+        </property>
+        <property name="tel1" type="string">
+            <column name="tel1" length="15" not-null="true" />
+        </property>
+        <property name="tel2" type="string">
+            <column name="tel2" length="15" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="70" />
+        </property>
+        <property name="objetivo" type="string">
+            <column name="objetivo" not-null="true" />
+        </property>
+        <property name="habilidade" type="string">
+            <column name="habilidade" not-null="true" />
+        </property>
+        <property name="formacao" type="string">
+            <column name="formacao" not-null="true" />
+        </property>
+        <property name="experiencia" type="string">
+            <column name="experiencia" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
